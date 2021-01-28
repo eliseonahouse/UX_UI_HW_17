@@ -1,0 +1,41 @@
+.container{
+  max-width: 900px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+      "sidebar header"
+      "sidebar main"
+      "footer main";
+}
+
+header{
+  padding: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav ul {
+  display: flex;
+  align-items: baseline;
+  list-style-type: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.main {
+  flex: 3;
+  margin-right: 60px;
+}
+
+.sidebar {
+ flex: 1;
+ background-color: #DACF6A;
+}
+
