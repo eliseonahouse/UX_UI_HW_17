@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-rows: 10vh 90vh;
 }
 
 .aside {
@@ -21,7 +21,8 @@
 }
 
 .socialIcons {
-  padding-bottom: 10px;
+  padding-top: 10em;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -44,15 +45,17 @@ main {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-end: 3;
+  /* display: flex;
+  justify-content: center; */
 }
 
-footer {
+/* footer {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 3;
   grid-row-end: 4;
-}
+} */
 
 .logoHome {
   padding-left: 10px;
@@ -103,28 +106,109 @@ a:hover {
 }
 
 a:active {
-  color: #8AD0CC;
+  color: orangered;
   text-decoration: none;
 }
 
-/* photogrid */
-.row {
+/* photocards */
+.cards {
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: flex-start;
+  flex-direction: column;
+  max-height: 50vh;
+}
+.cards img {
+  padding-top: 10px;
+  padding-left: 10px;
+  max-width: 40vh;
+}
+
+/* textcards */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: roboto;
+}
+
+/* Float four columns side by side */
+.skillsCardCol {
+  float: left;
+  width: 30%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.skillscardRow {margin: 0 -5px;
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+}
+
+
+/* Clear floats after the columns */
+/* .row:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+/* Style the counter cards */
+.textCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #89D0CB;
+  min-height: 350px;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+/* @media screen and (max-width: 600px) {
+  .col {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+} */
+
+
+ /* .introPics {
+   display: flex;
+   align-items: center;
+ } */
+
+.outer-grid {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 20px;
-  /* justify-content: space-evenly; */
-}
-
-
-.column {
-  flex: 50%;
   padding: 0 4px;
-  vertical-align: center;
-  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
 }
-
-.column img {
+.inner-grid {
+  flex: 45%;
+  max-width: 45%;
+  padding: 0 4px;
+}
+.inner-grid img {
   margin-top: 8px;
-  vertical-align: middle;
+  width: 100%;
+  padding: 10px;
 }
-
+@media screen and (max-width: 800px) {
+  .inner-grid {
+     flex: 50%;
+     max-width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .inner-grid {
+     flex: 100%;
+     max-width: 100%;
+  }
+  .heroImage {
+    width: 10%;
+    margin-left: 0;
+  }
+}
